@@ -1,7 +1,7 @@
 %define 	module ctypes
 
 Summary:	Python package to call functions in dynamic linked libraries
-#Summary(pl):	-
+Summary(pl):	Pakiet Pythona do wywo³ywania funkcji w bibliotekach linkowanych dynamicznie
 Name:		python-%{module}
 Version:	0.6.3
 Release:	0.1
@@ -20,7 +20,11 @@ ctypes is a Python package to create and manipulate C data types in
 Python, and to call functions in dynamic link libraries/shared dlls.
 It allows wrapping these libraries in pure Python.
 
-#%description -l pl
+%description -l pl
+ctypes to pakiet Pythona do tworzenia i obróbki typów danych z C w
+Pythonie oraz wywo³ywania funkcji z dynamicznie linkowanych i
+wspó³dzielonych bibliotek. Umo¿liwia obudowywanie tych bibliotek w
+czystym Pythonie.
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -45,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.txt docs/
 %dir %{py_sitedir}/%{module}
 %{py_sitedir}/%{module}/*.py[co]
-%{py_sitedir}/*.so
+%attr(755,root,root) %{py_sitedir}/*.so
