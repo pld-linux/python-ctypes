@@ -9,6 +9,7 @@ License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/%{module}/%{module}-%{version}.tar.gz
 # Source0-md5:	9288bf474752a940908bb3d37110889d
+Patch0:		%{name}-typo.patch
 URL:		http://starship.python.net/crew/theller/ctypes/
 BuildRequires:	libffi-devel
 Requires:	libffi
@@ -28,6 +29,7 @@ czystym Pythonie.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}"
