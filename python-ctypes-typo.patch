@@ -1,8 +1,0 @@
---- ctypes-0.9.1/ctypes/__init__.py~	2004-09-03 12:51:19.000000000 +0200
-+++ ctypes-0.9.1/ctypes/__init__.py	2004-09-21 03:36:57.980302544 +0200
-@@ -376,4 +376,4 @@
-     if _os.name == "nt":
-         set_conversion_mode("mbcs", "ignore")
-     else:
--        set_coversion_mode("ascii", "strict")
-+        set_conversion_mode("ascii", "strict")
