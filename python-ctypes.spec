@@ -30,6 +30,8 @@ czystym Pythonie.
 %setup -q -n %{module}-%{version}
 
 %build
+CFLAGS="%{rpmcflags}"
+export CFLAGS
 python setup.py build
 
 %install
