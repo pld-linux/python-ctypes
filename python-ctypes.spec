@@ -1,14 +1,17 @@
+#
+# TODO:
+# - move the scripts from the wrap subpackage to /usr/bin?
 %define 	module ctypes
 
 Summary:	Python package to call functions in dynamic linked libraries
 Summary(pl):	Pakiet Pythona do wywo³ywania funkcji w bibliotekach linkowanych dynamicznie
 Name:		python-%{module}
-Version:	0.9.2
+Version:	0.9.6
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	1acd425fcb69722aca1ab0395d66d780
+# Source0-md5:	9f6bfdb21f7016da2518020beb326da0
 URL:		http://starship.python.net/crew/theller/ctypes/
 BuildRequires:	libffi-devel
 BuildRequires:	python-devel
@@ -43,7 +46,7 @@ python setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
-rm $RPM_BUILD_ROOT%{py_sitedir}/%{module}/*.py
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -51,6 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.txt docs/
-%dir %{py_sitedir}/%{module}
-%{py_sitedir}/%{module}/*.py[co]
+%{py_sitedir}/%{module}
 %attr(755,root,root) %{py_sitedir}/*.so
