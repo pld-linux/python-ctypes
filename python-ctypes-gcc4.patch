@@ -1,0 +1,20 @@
+--- ctypes-0.9.6/source/_ctypes.c.wiget	2006-04-11 18:06:24.000000000 +0200
++++ ctypes-0.9.6/source/_ctypes.c	2006-04-11 18:07:08.000000000 +0200
+@@ -2449,7 +2449,7 @@
+   "sO|O" - function name, dll object (with an integer handle)
+   "is|O" - vtable index, method name, creates callable calling COM vtbl
+ */
+-static PyObject *
++PyObject *
+ CFuncPtr_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+ {
+ 	CFuncPtrObject *self;
+@@ -3880,7 +3880,7 @@
+ 	(inquiry)Pointer_nonzero, /* nb_nonzero */
+ };
+ 
+-static PyTypeObject Pointer_Type = {
++PyTypeObject Pointer_Type = {
+ 	PyObject_HEAD_INIT(NULL)
+ 	0,
+ 	"_ctypes._Pointer",
