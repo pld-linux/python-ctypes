@@ -6,13 +6,12 @@
 Summary:	Python package to call functions in dynamic linked libraries
 Summary(pl):	Pakiet Pythona do wywo³ywania funkcji w bibliotekach linkowanych dynamicznie
 Name:		python-%{module}
-Version:	0.9.6
-Release:	2
+Version:	0.9.9.6
+Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	9f6bfdb21f7016da2518020beb326da0
-Patch0:		%{name}-gcc4.patch
+# Source0-md5:	6c7240608d564018ef8254721fde0012
 URL:		http://starship.python.net/crew/theller/ctypes/
 BuildRequires:	libffi-devel
 BuildRequires:	python-devel
@@ -34,7 +33,6 @@ czystym Pythonie.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}"
