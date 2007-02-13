@@ -4,7 +4,7 @@
 %define 	module ctypes
 
 Summary:	Python package to call functions in dynamic linked libraries
-Summary(pl.UTF-8):   Pakiet Pythona do wywoływania funkcji w bibliotekach linkowanych dynamicznie
+Summary(pl.UTF-8):	Pakiet Pythona do wywoływania funkcji w bibliotekach linkowanych dynamicznie
 Name:		python-%{module}
 Version:	0.9.9.6
 Release:	1
