@@ -10,7 +10,7 @@ Version:	0.9.9.6
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/%{module}/%{module}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/ctypes/%{module}-%{version}.tar.gz
 # Source0-md5:	6c7240608d564018ef8254721fde0012
 URL:		http://starship.python.net/crew/theller/ctypes/
 BuildRequires:	libffi-devel
