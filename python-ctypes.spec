@@ -6,18 +6,21 @@
 Summary:	Python package to call functions in dynamic linked libraries
 Summary(pl.UTF-8):	Pakiet Pythona do wywoływania funkcji w bibliotekach linkowanych dynamicznie
 Name:		python-%{module}
-Version:	0.9.9.6
+Version:	1.0.2
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/ctypes/%{module}-%{version}.tar.gz
-# Source0-md5:	6c7240608d564018ef8254721fde0012
+# Source0-md5:	94ff7aa7f7f71b23bac8a98065d77743
 URL:		http://starship.python.net/crew/theller/ctypes/
-BuildRequires:	libffi-devel
-BuildRequires:	python-devel
-BuildRequires:	python-modules
-Requires:	libffi
-Requires:	python >= 2.3
+# modified libffi included
+#BuildRequires:	libffi-devel
+BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-modules >= 2.3
+# ctypes already included in python 2.5
+BuildRequires:	python < 1:2.5
+BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,5 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.txt docs/
-%{py_sitedir}/%{module}
-%attr(755,root,root) %{py_sitedir}/*.so
+%{py_sitedir}/ctypes
+%attr(755,root,root) %{py_sitedir}/_ctypes.so
+%attr(755,root,root) %{py_sitedir}/_ctypes_test.so
