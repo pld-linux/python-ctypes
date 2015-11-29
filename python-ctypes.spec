@@ -13,6 +13,7 @@ Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/ctypes/%{module}-%{version}.tar.gz
 # Source0-md5:	94ff7aa7f7f71b23bac8a98065d77743
 URL:		http://starship.python.net/crew/theller/ctypes/
+BuildRequires:	rpmbuild(macros) >= 1.710
 # modified libffi included
 #BuildRequires:	libffi-devel
 BuildRequires:	python-devel >= 2.3
